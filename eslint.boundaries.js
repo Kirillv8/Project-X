@@ -6,14 +6,15 @@ export const eslintBoundariesConfig = [
       boundaries,
     },
     rules: {
-      'boundaries/element-types': [
+      'boundaries/entry-point': [
         2,
         {
           default: 'disallow',
           rules: [
-            { from: 'shared', allow: ['shared'] },
-            { from: 'features', allow: ['shared', 'features'] },
-            { from: 'app', allow: ['shared', 'features', 'app'] },
+            {
+              target: ['features'],
+              allow: ['index.(ts|tsx)', '*.page.(ts|tsx)'],
+            },
           ],
         },
       ],
